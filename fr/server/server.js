@@ -10,4 +10,4 @@ app.use("/api", api);
 
 const port = 8000;
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, () => console.log(`Backend Listening on port ${port}`));
