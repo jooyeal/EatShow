@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
 
-const Wrap = styled.body`
+const Wrap = styled.div`
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +35,13 @@ const SLink = styled(Link)`
   font-size: 14px;
 `;
 
-const LoginPresenter = () => {
+const LoginPresenter = ({
+  userId,
+  userPassword,
+  idHandler,
+  passwordHandler,
+  submitHandler,
+}) => {
   return (
     <Wrap>
       <Container>
@@ -42,9 +49,13 @@ const LoginPresenter = () => {
           <SLink to="/signup">Sign Up</SLink>
         </Box>
         <Box>
-          <form onSubmit>
-            <input type="text" />
-            <input type="text" />
+          <form onSubmit={submitHandler}>
+            <input type="text" value={userId} onChange={idHandler} />
+            <input
+              type="text"
+              value={userPassword}
+              onChange={passwordHandler}
+            />
             <input type="submit" value="signin" />
           </form>
         </Box>
