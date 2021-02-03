@@ -28,6 +28,7 @@ function LoginContainer() {
       alert("login error");
       console.log(json.data.error);
     } else {
+      alert("login seccess");
       setCurrentUser(json.data.user[0].userId);
     }
     console.log(currentUser);
